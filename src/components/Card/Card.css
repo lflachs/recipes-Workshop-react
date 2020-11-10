@@ -1,0 +1,16 @@
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	width: 196px;
+	height: 265px;
+	background-size: cover;
+	border-radius: 20px;
+	background-position: center;
+}
+
+.favorite-icon {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+}
