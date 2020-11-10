@@ -4,12 +4,7 @@ import './App.css';
 import Button from './components/Button/Button';
 import Loader from './components/Loader/Loader';
 import Card from './components/Card/Card';
-import { useFetch } from './useFetch';
 function App() {
-	const [meals, loading, errors] = React.useFetch(
-		'https://www.themealdb.com/api/json/v1/1/search.php?f=a'
-	);
-
 	return (
 		<div className='App'>
 			<br />
