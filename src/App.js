@@ -1,42 +1,26 @@
+// Modules
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+// CSS
 import './App.css';
 
-import useFetch from './useFetch';
-
-import Button from './components/Button/Button';
+// Components
 import Loader from './components/Loader/Loader';
 import Card from './components/Card/Card';
+import Homepage from './Pages/Homepage';
+import ProductInfo from './Pages/ProductInfo';
 
-function App() {
-	// With custom hooks
-	const [meals, loading, errors] = useFetch(
-		'https://www.themealdb.com/api/json/v1/1/search.php?f=a'
-	);
-
-	// With useEffect...
-
-	// const [meals, setMeals] = useState([]);
-	// const [loading, setLoading] = useState(true);
-	// const [errors, setErrors] = useState(false);
-	// useEffect(() => {
-	// 	fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
-	// 		.then((resp) => resp.json())
-	// 		.then((data) => setMeals(data.meals))
-	// 		.catch((err) => setErrors(true));
-	// }, []);
-
-	console.log(meals);
-	return (
-		<div className='App'>
-			<br />
-			<Button text='Click here' />
-			<Loader />
-			<Card
-				image='https://www.themealdb.com/images/media/meals/d8f6qx1604182128.jpg'
-				title='Food'
-			/>
-		</div>
-	);
+class App extends React.Component {
+	render() {
+		return (
+			<Router>
+				<Switch>
+					<Route path='/meals/:meal' exact component={ProductInfo} />
+					<Route path='/' exact component={Homepage} />
+				</Switch>
+			</Router>
+		);
+	}
 }
 
 export default App;

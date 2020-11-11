@@ -6,6 +6,8 @@
 	height: 265px;
 	background-size: cover;
 	border-radius: 20px;
+	margin: 10px;
+
 	background-position: center;
 }
 
@@ -13,4 +15,7 @@
 	position: absolute;
 	height: 100px;
 	width: 100px;
+}
+.card p {
+	color: white;
 }

@@ -14,7 +14,7 @@ function Card({ image, title, isFavorite }) {
 				})`,
 			}}
 		>
-			<img src={Heart} alt='favorite-icon' className='favorite-icon' />
+			{/* <img src={Heart} alt='favorite-icon' className='favorite-icon' /> */}
 			<p>{title}</p>
 		</div>
 	);
