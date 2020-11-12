@@ -1,12 +1,11 @@
 // Modules
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // CSS
 import './App.css';
 
 // Components
-import Loader from './components/Loader/Loader';
-import Card from './components/Card/Card';
+
 import Homepage from './Pages/Homepage';
 import ProductInfo from './Pages/ProductInfo';
 
