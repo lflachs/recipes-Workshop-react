@@ -2,11 +2,8 @@ import React from 'react';
 import './Card.css';
 import Heart from '../../assets/heart.svg';
 import HeartFav from '../../assets/heart-active.svg';
-function Card({ id, image, title, onFavorite, favorites }) {
-	const isFavorite = () => {
-		favorites.some((recipe) => recipe.idMeal === id);
-	};
 
+function Card({ image, title, onFavorite, isFavorite }) {
 	return (
 		<div
 			className='card'
@@ -19,7 +16,7 @@ function Card({ id, image, title, onFavorite, favorites }) {
 			}}
 		>
 			<img
-				src={isFavorite() ? HeartFav : Heart}
+				src={isFavorite ? HeartFav : Heart}
 				alt='favorite-icon'
 				className='favorite-icon'
 				onClick={() => onFavorite()}

@@ -36,6 +36,7 @@ class Homepage extends React.Component {
 									id={meal.idMeal}
 									key={idx}
 									onFavorite={() => this.props.onFavorite(meal)}
+									isFavorite={this.props.isFavorite(meal)}
 									favorites={this.props.favorites}
 									image={meal.strMealThumb}
 									title={meal.strMeal}

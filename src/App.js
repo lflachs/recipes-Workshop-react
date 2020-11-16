@@ -44,10 +44,10 @@ class App extends React.Component {
 						<Homepage
 							favorites={this.state.favorites}
 							onFavorite={(item) => this.handleFavorite(item)}
-							isFavorite={() => this.isFavorite()}
+							isFavorite={(id) => this.isFavorite(id)}
 						/>
 					</Route>
-					<Route path='/favorite' exact component={Homepage} />
+					{/* <Route path='/favorite' exact component={Favorite} /> */}
 				</Switch>
 			</Router>
 		);
