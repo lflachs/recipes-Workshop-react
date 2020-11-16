@@ -44,7 +44,6 @@ class App extends React.Component {
 						<Homepage
 							favorites={this.state.favorites}
 							onFavorite={(item) => this.handleFavorite(item)}
-							favorites={this.state.favorites}
 							isFavorite={() => this.isFavorite()}
 						/>
 					</Route>
