@@ -29,11 +29,20 @@ class Homepage extends React.Component {
 							justifyContent: 'center',
 						}}
 					>
-						{this.state.meals.map((meal) => (
-							<Link to={`/meals/${meal.idMeal}`}>
-								<Card image={meal.strMealThumb} title={meal.strMeal} />
-							</Link>
-						))}
+						{this.state.meals.map((meal, idx) => {
+							// <Link to={`/meals/${meal.idMeal}`}>
+							return (
+								<Card
+									id={meal.idMeal}
+									key={idx}
+									onFavorite={() => this.props.onFavorite(meal)}
+									favorites={this.props.favorites}
+									image={meal.strMealThumb}
+									title={meal.strMeal}
+								/>
+							);
+							// </Link>
+						})}
 					</div>
 				)}
 			</div>

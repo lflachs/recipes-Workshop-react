@@ -13,36 +13,41 @@ class App extends React.Component {
 	state = {
 		favorites: [],
 	};
-
+	isFavorite = (item) => {
+		return this.state.favorites.some((recipe) => recipe.idMeal === item.idMeal);
+	};
 	handleFavorite(recipeItem) {
-		const isFavorite = () =>
-			this.state.favorites.some((recipe) => recipe.id === recipeItem.id);
-
-		if (isFavorite(recipeItem)) {
+		if (this.isFavorite(recipeItem)) {
 			this.removeFavorite(recipeItem);
 		} else {
 			this.addFavorite(recipeItem);
 		}
 	}
 	removeFavorite(favoriteItem) {
+		console.log('remove');
 		this.setState({
 			favorites: this.state.favorites.filter(
-				(recipe) => recipe.id !== favoriteItem.id
+				(recipe) => recipe.idMeal !== favoriteItem.idMeal
 			),
 		});
 	}
 	addFavorite(favoriteItem) {
+		console.log('addFav');
 		this.setState({ favorites: [...this.state.favorites, favoriteItem] });
 	}
 	render() {
 		return (
 			<Router>
-				<button onClick={() => this.handleFavorite({ id: 1, text: 'test' })}>
-					test
-				</button>
 				<Switch>
 					<Route path='/meals/:meal' exact component={ProductInfo} />
-					<Route path='/' exact component={Homepage} />
+					<Route path='/' exact>
+						<Homepage
+							favorites={this.state.favorites}
+							onFavorite={(item) => this.handleFavorite(item)}
+							favorites={this.state.favorites}
+							isFavorite={() => this.isFavorite()}
+						/>
+					</Route>
 					<Route path='/favorite' exact component={Homepage} />
 				</Switch>
 			</Router>
