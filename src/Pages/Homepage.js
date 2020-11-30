@@ -4,7 +4,6 @@ import React from 'react';
 // Components
 import Loader from '../components/Loader/Loader';
 import Card from '../components/Card/Card';
-import { Link } from 'react-router-dom';
 
 class Homepage extends React.Component {
 	state = {
